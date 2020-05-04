@@ -1,0 +1,24 @@
+zuul:
+  #Timsoft Micro-Services will be mapped under the /api URI
+  prefix: /api
+  routes:
+    service-device-connector:
+      path: /connector/**
+      url: http://localhost:8080
+    service-device-registrar:
+      path: /registrar/**
+      serviceId: http://localhost:8081
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8070/eureka/
+#  instance:
+#    hostname: localhost
+
+server:
+  port: 8079
+
+spring:
+  application:
+    name: api-gateway-service
